@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <iostream>
+#include <regex>
+
+using namespace std;
+int isPalindrome(string Val)
+{
+	int i = 0, j = Val.length() - 1;
+	transform(Val.begin(), Val.end(), Val.begin(), ::toupper);
+	while (i < j)
+	{
+		if (Val.at(i) != Val.at(j))
+			return 0;
+
+		i++;
+		j--;
+	}
+	return 1;
+}
+
+int main()
+{
+	std::string m_sPol;
+	cout << "Please Enter any string." << endl;
+	getline(cin, m_sPol);
+	
+    int m_isPolindrom = isPalindrome(m_sPol);
+    if(m_isPolindrom)
+	    cout << m_sPol<<" is polyndrom" << endl;
+	else
+	    cout << m_sPol<<" is not polyndrom"<< endl;
+    return 0;
+}
